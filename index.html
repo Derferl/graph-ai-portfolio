@@ -6,9 +6,9 @@
   <title>Joe Odu | Generative AI for Work & Research</title>
   <style>
     :root {
-      --primary: #1565c0;
-      --secondary: #42a5f5;
-      --gradient: linear-gradient(135deg, #1565c0, #42a5f5);
+      --navy-blue: #001f3f;
+      --light-blue: #005f99;
+      --gradient: linear-gradient(135deg, #001f3f, #005f99);
       --text-dark: #000;
       --text-muted: #333;
       --bg-light: #ffffff;
@@ -43,7 +43,7 @@
     }
 
     nav a:hover {
-      color: var(--primary);
+      color: var(--light-blue);
     }
 
     header {
@@ -52,6 +52,7 @@
       background: var(--gradient);
       color: white;
       position: relative;
+      animation: fadeIn 2.5s ease-in-out;
     }
 
     header img {
@@ -62,28 +63,54 @@
       object-fit: cover;
       margin-bottom: 1rem;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+      opacity: 0;
+      animation: fadeInImage 2.5s ease forwards;
+    }
+
+    @keyframes fadeInImage {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    .name {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #d0eaff;
+      margin-top: 0.5rem;
+      opacity: 0;
+      animation: fadeInText 3s ease forwards 1.2s;
     }
 
     .intro-text {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 700;
-      margin-top: 0.5rem;
       color: white;
       overflow: hidden;
       border-right: .15em solid white;
       white-space: nowrap;
+      margin: 1rem auto;
       width: 0;
       animation: typing 3s steps(30, end) forwards, blink .75s step-end infinite;
     }
 
     @keyframes typing {
       from { width: 0; }
-      to { width: 12ch; }
+      to { width: 13ch; }
     }
 
     @keyframes blink {
       from, to { border-color: transparent; }
       50% { border-color: white; }
+    }
+
+    @keyframes fadeInText {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
     }
 
     section {
@@ -96,7 +123,7 @@
     }
 
     h2 {
-      color: var(--primary);
+      color: var(--light-blue);
       border-bottom: 2px solid #bbdefb;
       display: inline-block;
       margin-bottom: 1.5rem;
@@ -109,6 +136,22 @@
 
     ul {
       margin-left: 1.5rem;
+    }
+
+    .skills-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .skill-item {
+      background: var(--gradient);
+      color: white;
+      text-align: center;
+      padding: 0.8rem;
+      border-radius: 8px;
+      font-weight: 500;
     }
 
     .week-list {
@@ -158,13 +201,25 @@
 
   <header>
     <img src="https://github.com/Derferl/graph-ai-portfolio/blob/main/Joe's_picture.jpeg?raw=true" alt="Joe's Picture">
+    <div class="name">Joe Odu</div>
     <div class="intro-text">Hello, I am Joe</div>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I am a global health professional with over 12 years of experience managing multi-sectoral public health programs across Africa, Asia and Eastern Europe. My expertise spans complex project management, institutional grant management, and data-driven insights that inform adaptive program strategies. I have co-authored national health policies, implemented digital data systems, and supported capacity strengthening across multiple countries.</p>
-    <p>Currently serving as Monitoring, Evaluation, and Learning (MEL) Advisor at Project HOPE’s Global Team, I lead regional assessments, data system innovations, and cross-country learning initiatives. My focus is on leveraging AI tools to enhance efficiency, evidence-based decision-making, and research excellence in global health.</p>
+    <p>I am a global health professional with over 12 years of experience designing, monitoring and evaluating public health programs across Africa, Asia, and Eastern Europe. Adept at optimizing program delivery for organizations/institutions. Proven track record in complex project management, data-driven insights and system strengthening. I have co-authored national health policies, implemented digital data systems, and supported capacity strengthening across multiple countries.</p>
+
+    <h3>Core Skills</h3>
+    <div class="skills-list">
+      <div class="skill-item">Stakeholder Management</div>
+      <div class="skill-item">Project/Program Management</div>
+      <div class="skill-item">Performance Monitoring</div>
+      <div class="skill-item">Evaluation</div>
+      <div class="skill-item">Knowledge Management</div>
+      <div class="skill-item">Capacity Building</div>
+      <div class="skill-item">Team Management</div>
+      <div class="skill-item">Data Analysis and Technical Writing</div>
+    </div>
   </section>
 
   <section id="course">
