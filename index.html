@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Joseph Odu | Generative AI for Work & Research</title>
+  <style>
+    :root {
+      --bg-dark: #0d1117;
+      --bg-card: #161b22;
+      --accent: #00bfa5;
+      --text-light: #e6edf3;
+      --text-muted: #8b949e;
+      --gradient: linear-gradient(135deg, #00bfa5, #1e88e5);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--bg-dark);
+      color: var(--text-light);
+    }
+
+    header {
+      background: var(--gradient);
+      text-align: center;
+      padding: 5rem 2rem 6rem 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #e0f7fa;
+    }
+
+    nav {
+      background: rgba(22, 27, 34, 0.8);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    nav a {
+      color: var(--text-light);
+      text-decoration: none;
+      margin: 0 1.5rem;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    section {
+      max-width: 1000px;
+      margin: 6rem auto;
+      background: var(--bg-card);
+      padding: 3rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      color: var(--accent);
+      border-bottom: 2px solid var(--accent);
+      display: inline-block;
+      margin-bottom: 1.5rem;
+    }
+
+    p, li {
+      color: var(--text-muted);
+      font-size: 1rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+    }
+
+    .week-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .week-item {
+      background: linear-gradient(135deg, #1e88e5, #00bfa5);
+      color: #fff;
+      text-align: center;
+      padding: 1.5rem;
+      border-radius: 16px;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .week-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--gradient);
+      color: white;
+      border-top-left-radius: 30px;
+      border-top-right-radius: 30px;
+      margin-top: 5rem;
+    }
+
+    @media (max-width: 768px) {
+      header h1 { font-size: 2.2rem; }
+      header p { font-size: 1rem; }
+      section { padding: 2rem; margin: 4rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#course">Course</a>
+    <a href="#submissions">Submissions</a>
+  </nav>
+
+  <header>
+    <h1>Joseph E. Odu</h1>
+    <p>Generative AI for Work & Research Portfolio</p>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I am a global health professional with over 12 years of experience managing multi-sectoral public health programs across Africa. My expertise spans complex project management, institutional grant management, and data-driven insights that inform adaptive program strategies. I have co-authored national health policies, implemented digital data systems, and supported capacity strengthening across multiple countries.</p>
+    <p>Currently serving as Monitoring, Evaluation, and Learning (MEL) Advisor at Project HOPE’s Global Team, I lead regional assessments, data system innovations, and cross-country learning initiatives. My focus is on leveraging AI tools to enhance efficiency, evidence-based decision-making, and research excellence in global health.</p>
+  </section>
+
+  <section id="course">
+    <h2>About the Course</h2>
+    <p><strong>Generative AI for Work & Research</strong> is an 8-week live cohort course by <em>GRAPH Courses</em> at the University of Geneva, Switzerland. It introduces professionals to no-code AI tools that improve productivity, automate workflows, and transform research and communication.</p>
+    <ul>
+      <li>Weekly live workshops & help sessions</li>
+      <li>Capstone project guidance</li>
+      <li>Lifetime access to tutorials</li>
+      <li>Global peer collaboration</li>
+    </ul>
+    <p><strong>Modules include:</strong> AI for writing and presentation design, automated data analysis, literature review and text synthesis, custom GPT creation, workflow automation, and AI for research communication.</p>
+  </section>
+
+  <section id="submissions">
+    <h2>My Weekly Submissions</h2>
+    <div class="week-list">
+      <div class="week-item">Week 1 – Foundations of Generative AI</div>
+      <div class="week-item">Week 2 – AI for Data Analysis</div>
+      <div class="week-item">Week 3 – Research & Text Synthesis</div>
+      <div class="week-item">Week 4 – Custom GPTs</div>
+      <div class="week-item">Week 5 – Task Automation</div>
+      <div class="week-item">Week 6 – AI for Communication</div>
+      <div class="week-item">Week 7 – Capstone Development</div>
+      <div class="week-item">Week 8 – Showcase & Reflections</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Joseph E. Odu — Generative AI for Work & Research Portfolio</p>
+  </footer>
+</body>
+</html>
