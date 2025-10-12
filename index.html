@@ -3,85 +3,96 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joseph Odu | Generative AI for Work & Research</title>
+  <title>Joe Odu | Generative AI for Work & Research</title>
   <style>
     :root {
-      --bg-dark: #0d1117;
-      --bg-card: #161b22;
-      --accent: #00bfa5;
-      --text-light: #e6edf3;
-      --text-muted: #8b949e;
-      --gradient: linear-gradient(135deg, #00bfa5, #1e88e5);
+      --primary: #1976d2;
+      --gradient: linear-gradient(135deg, #1976d2, #64b5f6);
+      --text-dark: #111;
+      --text-muted: #444;
+      --bg-light: #ffffff;
     }
 
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: var(--bg-dark);
-      color: var(--text-light);
-    }
-
-    header {
-      background: var(--gradient);
-      text-align: center;
-      padding: 5rem 2rem 6rem 2rem;
-      position: relative;
-      overflow: hidden;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #e0f7fa;
+      background: var(--bg-light);
+      color: var(--text-dark);
     }
 
     nav {
-      background: rgba(22, 27, 34, 0.8);
       position: fixed;
       top: 0;
       width: 100%;
+      background: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       display: flex;
       justify-content: center;
-      padding: 1rem 0;
+      padding: 1rem;
       z-index: 100;
-      backdrop-filter: blur(8px);
     }
 
     nav a {
-      color: var(--text-light);
       text-decoration: none;
+      color: var(--text-dark);
       margin: 0 1.5rem;
       font-weight: 600;
       transition: color 0.3s;
     }
 
     nav a:hover {
-      color: var(--accent);
+      color: var(--primary);
+    }
+
+    header {
+      text-align: center;
+      padding: 8rem 2rem 5rem 2rem;
+      position: relative;
+    }
+
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 4px solid #64b5f6;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+
+    .intro-text {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: var(--gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      display: inline-block;
+      animation: fadeIn 3s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(20px); }
+      100% { opacity: 1; transform: translateY(0); }
     }
 
     section {
       max-width: 1000px;
-      margin: 6rem auto;
-      background: var(--bg-card);
+      margin: 4rem auto;
+      background: #f8f9fa;
       padding: 3rem;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
 
     h2 {
-      color: var(--accent);
-      border-bottom: 2px solid var(--accent);
+      color: var(--primary);
+      border-bottom: 2px solid #bbdefb;
       display: inline-block;
       margin-bottom: 1.5rem;
     }
 
     p, li {
       color: var(--text-muted);
-      font-size: 1rem;
+      line-height: 1.7;
     }
 
     ul {
@@ -96,19 +107,18 @@
     }
 
     .week-item {
-      background: linear-gradient(135deg, #1e88e5, #00bfa5);
-      color: #fff;
+      background: var(--gradient);
+      color: white;
       text-align: center;
       padding: 1.5rem;
-      border-radius: 16px;
+      border-radius: 12px;
       font-weight: 600;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
 
     .week-item:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     footer {
@@ -118,13 +128,12 @@
       color: white;
       border-top-left-radius: 30px;
       border-top-right-radius: 30px;
-      margin-top: 5rem;
     }
 
     @media (max-width: 768px) {
-      header h1 { font-size: 2.2rem; }
-      header p { font-size: 1rem; }
-      section { padding: 2rem; margin: 4rem 1rem; }
+      header img { width: 120px; height: 120px; }
+      .intro-text { font-size: 1.8rem; }
+      section { margin: 2rem 1rem; padding: 2rem; }
     }
   </style>
 </head>
@@ -136,13 +145,13 @@
   </nav>
 
   <header>
-    <h1>Joseph E. Odu</h1>
-    <p>Generative AI for Work & Research Portfolio</p>
+    <img src="https://github.com/Derferl/graph-ai-portfolio/blob/main/Joe's_picture.jpeg?raw=true" alt="Joe's Picture">
+    <div class="intro-text">Hello, I am Joe</div>
   </header>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>I am a global health professional with over 12 years of experience managing multi-sectoral public health programs across Africa. My expertise spans complex project management, institutional grant management, and data-driven insights that inform adaptive program strategies. I have co-authored national health policies, implemented digital data systems, and supported capacity strengthening across multiple countries.</p>
+    <p>I am a global health professional with over 12 years of experience managing multi-sectoral public health programs across Africa, Asia and Eastern Europe. My expertise spans complex project management, institutional grant management, and data-driven insights that inform adaptive program strategies. I have co-authored national health policies, implemented digital data systems, and supported capacity strengthening across multiple countries.</p>
     <p>Currently serving as Monitoring, Evaluation, and Learning (MEL) Advisor at Project HOPE’s Global Team, I lead regional assessments, data system innovations, and cross-country learning initiatives. My focus is on leveraging AI tools to enhance efficiency, evidence-based decision-making, and research excellence in global health.</p>
   </section>
 
@@ -173,7 +182,7 @@
   </section>
 
   <footer>
-    <p>&copy; 2025 Joseph E. Odu — Generative AI for Work & Research Portfolio</p>
+    <p>&copy; 2025 Joe Odu — Generative AI for Work & Research Portfolio</p>
   </footer>
 </body>
 </html>
