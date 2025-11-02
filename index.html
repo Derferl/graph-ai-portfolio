@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Joe Odu | Generative AI for Work & Research</title>
   <style>
     :root {
@@ -38,9 +38,8 @@
       font-weight: 600;
       transition: color 0.3s;
     }
-    nav a:hover {
-      color: var(--light-blue);
-    }
+    nav a:hover { color: var(--light-blue); }
+
     header {
       text-align: center;
       padding: 8rem 2rem 5rem 2rem;
@@ -50,127 +49,43 @@
       animation: fadeIn 2.5s ease-in-out;
     }
     header img {
-      width: 160px;
-      height: 160px;
-      border-radius: 50%;
-      border: 4px solid white;
-      object-fit: cover;
-      margin-bottom: 1rem;
+      width: 160px; height: 160px; border-radius: 50%;
+      border: 4px solid white; object-fit: cover; margin-bottom: 1rem;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-      opacity: 0;
-      animation: fadeInImage 2.5s ease forwards;
+      opacity: 0; animation: fadeInImage 2.5s ease forwards;
     }
-    @keyframes fadeInImage {
-      from { opacity: 0; transform: scale(0.9); }
-      to { opacity: 1; transform: scale(1); }
-    }
-    .name {
-      font-size: 1.5rem;
-      font-weight: 600;
-      color: #d0eaff;
-      margin-top: 0.5rem;
-      opacity: 0;
-      animation: fadeInText 3s ease forwards 1.2s;
-    }
+    @keyframes fadeInImage { from {opacity:0; transform:scale(0.9)} to {opacity:1; transform:scale(1)} }
+    .name { font-size: 1.5rem; font-weight: 600; color: #d0eaff; margin-top: .5rem; opacity: 0; animation: fadeInText 3s ease forwards 1.2s; }
     .intro-text {
-      font-size: 3rem;
-      font-weight: 700;
-      color: white;
-      overflow: hidden;
-      border-right: .15em solid white;
-      white-space: nowrap;
-      margin: 1rem auto;
-      width: 0;
-      animation: typing 3s steps(30, end) forwards, blink .75s step-end infinite;
+      font-size: 3rem; font-weight: 700; color: white; overflow: hidden;
+      border-right: .15em solid white; white-space: nowrap; margin: 1rem auto;
+      width: 0; animation: typing 3s steps(30,end) forwards, blink .75s step-end infinite;
     }
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 13ch; }
-    }
-    @keyframes blink {
-      from, to { border-color: transparent; }
-      50% { border-color: white; }
-    }
-    @keyframes fadeInText {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
+    @keyframes typing { from {width:0} to {width:13ch} }
+    @keyframes blink { from, to { border-color: transparent } 50% { border-color: white } }
+    @keyframes fadeInText { from {opacity:0; transform:translateY(20px)} to {opacity:1; transform:translateY(0)} }
+    @keyframes fadeIn { from {opacity:0} to {opacity:1} }
     section {
-      max-width: 1000px;
-      margin: 5rem auto;
-      background: #f9f9f9;
-      padding: 3rem;
-      border-radius: 16px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      max-width: 1000px; margin: 5rem auto; background: #f9f9f9; padding: 3rem;
+      border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1);
     }
-    h2 {
-      color: var(--light-blue);
-      border-bottom: 2px solid #bbdefb;
-      display: inline-block;
-      margin-bottom: 1.5rem;
-    }
-    p, li {
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-    ul {
-      margin-left: 1.5rem;
-    }
-    .skills-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-    .skill-item {
-      background: var(--gradient);
-      color: white;
-      text-align: center;
-      padding: 0.8rem;
-      border-radius: 8px;
-      font-weight: 500;
-    }
-    .week-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .week-item {
-      background: var(--gradient);
-      color: white;
-      text-align: center;
-      padding: 1.5rem;
-      border-radius: 12px;
-      font-weight: 600;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-    .week-item:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: var(--gradient);
-      color: white;
-      border-top-left-radius: 30px;
-      border-top-right-radius: 30px;
-    }
+    h2 { color: var(--light-blue); border-bottom: 2px solid #bbdefb; display:inline-block; margin-bottom:1.5rem; }
+    p, li { color: var(--text-muted); line-height: 1.7; }
+    ul { margin-left: 1.5rem; }
+    .skills-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 1rem; margin-top: 1rem; }
+    .skill-item { background: var(--gradient); color:white; text-align:center; padding:.8rem; border-radius:8px; font-weight:500; }
+    .week-list { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:1.5rem; margin-top:2rem; }
+    .week-item { background: var(--gradient); color:white; text-align:center; padding:1.5rem; border-radius:12px; font-weight:600; transition: transform .3s ease, box-shadow .3s ease; }
+    .week-item:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+    footer { text-align:center; padding:2rem; background: var(--gradient); color:white; border-top-left-radius:30px; border-top-right-radius:30px; }
     @media (max-width: 768px) {
       header img { width: 120px; height: 120px; }
       .intro-text { font-size: 2rem; }
       section { margin: 2rem 1rem; padding: 2rem; }
     }
+    /* Ensure the Botpress widget is never hidden behind other UI */
+    .bpw-widget-btn, .bpw-chat-container { z-index: 99999 !important; }
   </style>
-      <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
-<script src="https://files.bpcontent.cloud/2025/11/02/17/20251102173817-ETBVPS1A.js" defer></script>
-       <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
-  <script src="https://files.bpcontent.cloud/2025/11/02/17/20251102173817-ETBVPS1A.js" defer></script>
 </head>
 <body>
   <nav>
@@ -178,11 +93,13 @@
     <a href="#course">Course</a>
     <a href="#submissions">Submissions</a>
   </nav>
+
   <header>
-    <img src="https://github.com/Derferl/graph-ai-portfolio/blob/main/Joe's_picture.jpeg?raw=true" alt="Joe's Picture">
+    <img src="https://github.com/Derferl/graph-ai-portfolio/blob/main/Joe's_picture.jpeg?raw=true" alt="Joe's Picture" />
     <div class="name">Joe Odu</div>
     <div class="intro-text">Hello, I am Joe</div>
   </header>
+
   <section id="about">
     <h2>About Me</h2>
     <p>I am a global health professional with over 12 years of experience designing, monitoring and evaluating public health programs across Africa, Asia, and Eastern Europe. Adept at optimizing program delivery for organizations/institutions. Proven track record in complex project management, data-driven insights and system strengthening. I have co-authored national health policies, implemented digital data systems, and supported capacity strengthening across multiple countries.</p>
@@ -198,32 +115,54 @@
       <div class="skill-item">Data Analysis and Technical Writing</div>
     </div>
   </section>
+
   <section id="course">
     <h2>About the Course</h2>
     <p><strong>Generative AI for Work & Research</strong> is an 8-week live cohort course by <em>GRAPH Courses</em> at the University of Geneva, Switzerland. It introduces professionals to no-code AI tools that improve productivity, automate workflows, and transform research and communication.</p>
     <ul>
-      <li>Weekly live workshops & help sessions</li>
+      <li>Weekly live workshops &amp; help sessions</li>
       <li>Capstone project guidance</li>
       <li>Lifetime access to tutorials</li>
       <li>Global peer collaboration</li>
     </ul>
     <p><strong>Modules include:</strong> AI for writing and presentation design, automated data analysis, literature review and text synthesis, custom GPT creation, workflow automation, and AI for research communication.</p>
   </section>
+
   <section id="submissions">
     <h2>My Weekly Submissions</h2>
     <div class="week-list">
       <div class="week-item">Week 1 – Foundations of Generative AI</div>
       <div class="week-item">Week 2 – AI for Data Analysis</div>
-      <div class="week-item">Week 3 – Research & Text Synthesis</div>
+      <div class="week-item">Week 3 – Research &amp; Text Synthesis</div>
       <div class="week-item">Week 4 – Custom GPTs</div>
       <div class="week-item">Week 5 – Task Automation</div>
       <div class="week-item">Week 6 – AI for Communication</div>
       <div class="week-item">Week 7 – Capstone Development</div>
-      <div class="week-item">Week 8 – Showcase & Reflections</div>
+      <div class="week-item">Week 8 – Showcase &amp; Reflections</div>
     </div>
   </section>
+
   <footer>
-    <p>&copy; 2025 Joe Odu — Generative AI for Work & Research Portfolio</p>
+    <p>&copy; 2025 Joe Odu — Generative AI for Work &amp; Research Portfolio</p>
   </footer>
+
+  <!-- Load Botpress webchat ONCE, then your config file ONCE -->
+  <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js" defer></script>
+  <script src="https://files.bpcontent.cloud/2025/11/02/17/20251102173817-ETBVPS1A.js" defer></script>
+
+  <!--
+    If you prefer inline init instead of a hosted config file, use:
+    <script defer>
+      window.botpressWebChat.init({
+        botId: "YOUR_BOT_ID",
+        clientId: "YOUR_CLIENT_ID",
+        // optional:
+        // "hostUrl": "https://cdn.botpress.cloud/webchat/v3.3",
+        // "messagingUrl": "https://messaging.botpress.cloud",
+        // "avatarUrl": "https://...",
+        // "stylesheet": "https://cdn.botpress.cloud/webchat/v3.3/themes/default.css"
+      });
+    </script>
+  -->
 </body>
 </html>
