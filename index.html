@@ -78,13 +78,17 @@
     .week-item { background: var(--gradient); color:white; text-align:center; padding:1.5rem; border-radius:12px; font-weight:600; transition: transform .3s ease, box-shadow .3s ease; }
     .week-item:hover { transform: translateY(-5px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
     footer { text-align:center; padding:2rem; background: var(--gradient); color:white; border-top-left-radius:30px; border-top-right-radius:30px; }
+
     @media (max-width: 768px) {
       header img { width: 120px; height: 120px; }
       .intro-text { font-size: 2rem; }
       section { margin: 2rem 1rem; padding: 2rem; }
     }
+
     /* Ensure the Botpress widget is never hidden behind other UI */
-    .bpw-widget-btn, .bpw-chat-container { z-index: 99999 !important; }
+    .bpw-widget-btn, .bpw-chat-container, .bpw-floating-button, [class^="bpw-"] {
+      z-index: 99999 !important;
+    }
   </style>
 </head>
 <body>
@@ -146,55 +150,34 @@
     <p>&copy; 2025 Joe Odu — Generative AI for Work &amp; Research Portfolio</p>
   </footer>
 
-  <!-- Load Botpress webchat ONCE, then your config file ONCE -->
+  <!-- Botpress: load injector ONCE -->
   <script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js" defer></script>
-  <script src="https://files.bpcontent.cloud/2025/11/02/17/20251102173817-ETBVPS1A.js" defer></script>
 
-  <!--
-    If you prefer inline init instead of a hosted config file, use:
-    <script defer>
+  <!-- Inline init (replace IDs) -->
+  <script defer>
+    window.addEventListener('DOMContentLoaded', function () {
+      if (!window.botpressWebChat || !window.botpressWebChat.init) {
+        console.error('[Botpress] inject.js did not load (blocked or network error).');
+        return;
+      }
       window.botpressWebChat.init({
-        botId: "YOUR_BOT_ID",
-        clientId: "YOUR_CLIENT_ID",
-        // optional:
-        // "hostUrl": "https://cdn.botpress.cloud/webchat/v3.3",
-        // "messagingUrl": "https://messaging.botpress.cloud",
-        // "avatarUrl": "https://...",
-        // "stylesheet": "https://cdn.botpress.cloud/webchat/v3.3/themes/default.css"
+        botId: "YOUR_BOT_ID",      // ← replace
+        clientId: "YOUR_CLIENT_ID",// ← replace
+        messagingUrl: "https://messaging.botpress.cloud",
+        theme: "light",
+        themeColor: "#005f99",
+        hideWidget: false,
+        closeOnEscape: true,
+        showPoweredBy: false
       });
-    </script>
-  -->
-</body>
-  <!-- Keep the widget above your fixed nav -->
-<style>
-  .bpw-chat-container, .bpw-floating-button, [class^="bpw-"] { z-index: 99999 !important; }
-</style>
 
-<!-- Load the Botpress injector ONCE -->
-<script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js" defer></script>
-
-<!-- Inline init: replace with your real IDs from Botpress Cloud -->
-<script defer>
-  window.addEventListener('DOMContentLoaded', function () {
-    if (!window.botpressWebChat || !window.botpressWebChat.init) {
-      console.error('[Botpress] inject.js did not load (blocked or network error).');
-      return;
-    }
-    window.botpressWebChat.init({
-      botId: "YOUR_BOT_ID",
-      clientId: "YOUR_CLIENT_ID",
-      messagingUrl: "https://messaging.botpress.cloud",
-      theme: "light",
-      themeColor: "#005f99",
-      hideWidget: false,
-      closeOnEscape: true,
-      showPoweredBy: false
+      // Force-show on first load for verification
+      window.botpressWebChat.onEvent(
+        () => window.botpressWebChat.sendEvent({ type: 'show' }),
+        ['webchat:ready']
+      );
     });
-    // Force-show when ready so you can see it
-    window.botpressWebChat.onEvent(
-      () => window.botpressWebChat.sendEvent({ type: 'show' }),
-      ['webchat:ready']
-    );
-  });
-</script>
+  </script>
+</body>
 </html>
+
