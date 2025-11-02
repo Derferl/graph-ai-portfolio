@@ -165,4 +165,36 @@
     </script>
   -->
 </body>
+  <!-- Keep the widget above your fixed nav -->
+<style>
+  .bpw-chat-container, .bpw-floating-button, [class^="bpw-"] { z-index: 99999 !important; }
+</style>
+
+<!-- Load the Botpress injector ONCE -->
+<script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js" defer></script>
+
+<!-- Inline init: replace with your real IDs from Botpress Cloud -->
+<script defer>
+  window.addEventListener('DOMContentLoaded', function () {
+    if (!window.botpressWebChat || !window.botpressWebChat.init) {
+      console.error('[Botpress] inject.js did not load (blocked or network error).');
+      return;
+    }
+    window.botpressWebChat.init({
+      botId: "YOUR_BOT_ID",
+      clientId: "YOUR_CLIENT_ID",
+      messagingUrl: "https://messaging.botpress.cloud",
+      theme: "light",
+      themeColor: "#005f99",
+      hideWidget: false,
+      closeOnEscape: true,
+      showPoweredBy: false
+    });
+    // Force-show when ready so you can see it
+    window.botpressWebChat.onEvent(
+      () => window.botpressWebChat.sendEvent({ type: 'show' }),
+      ['webchat:ready']
+    );
+  });
+</script>
 </html>
