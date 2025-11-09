@@ -213,6 +213,15 @@
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
 
+        .form-container {
+            display: flex;
+            justify-content: center;
+            /* Center the form iframe */
+            margin-top: 2rem;
+            /* Optional spacing */
+        }
+
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -238,6 +247,14 @@
             }
         }
 
+        /* Responsive Iframe Styles for the Google Form */
+        @media (max-width: 768px) {
+            .form-container iframe {
+                width: 100% !important;
+                height: 600px !important; /* Adjust height for better mobile view */
+            }
+        }
+
         .bpw-widget-btn,
         .bpw-chat-container,
         .bpw-floating-button,
@@ -252,7 +269,8 @@
         <a href="#about">About Me</a>
         <a href="#course">Course</a>
         <a href="#submissions">Submissions</a>
-    </nav>
+        <a href="#consultation">Contact</a>
+        </nav>
 
     <header>
         <img src="https://github.com/Derferl/graph-ai-portfolio/blob/main/Joe's_picture.jpeg?raw=true"
@@ -310,6 +328,15 @@
         </div>
     </section>
 
+    <section id="consultation">
+        <h2>Contact for Consultation</h2>
+        <p>Interested in exploring how Generative AI can transform your work or research projects? Fill out the form
+            below to start a conversation about potential collaboration and consulting services.</p>
+        <div class="form-container">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd-Hvqo842UwdXOmqNMkNCmG6ARp-HdVZoRmBnmoa1ogzgrbA/viewform?embedded=true"
+                width="640" height="812" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+        </div>
+    </section>
     <footer>
         <p>&copy; 2025 Joe Odu — Generative AI for Work &amp; Research Portfolio</p>
     </footer>
